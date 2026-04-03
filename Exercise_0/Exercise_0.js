@@ -36,6 +36,27 @@
             list.appendChild(li);                    // Inject into DOM tree
         });
 
+        // --- Add button ---
+        const taskInput0 = document.getElementById('taskInput0');
+        const taskButton0 = document.getElementById('taskButton0');
+
+        taskButton0.addEventListener('click', function(){
+                const taskText = taskInput0.value;
+
+                // To prevent empty tasks:
+                if(taskText.trim() === '') return;
+
+                const li = document.createElement('li');
+                li.innerText = taskText;
+
+                list.appendChild(li);
+
+                taskInput0.value = '';  //clear input
+                taskInput0.focus();     //focuses back on the input
+
+        });
+
+
         // --- Exercise 4: Toggling Classes ---
         const box = document.getElementById('box');
 

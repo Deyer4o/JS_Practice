@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini HTML CSS JS Playground</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .editor-panel,
+        .preview-panel {
+            width: 50%;
+            padding: 16px;
+        }
+
+        .editor-panel {
+            background: #f4f4f4;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+        }
+
+        .preview-panel {
+            background: #ffffff;
+        }
+
+        h2, h3 {
+            margin-top: 0;
+        }
+
+        .editor-group {
+            margin-bottom: 16px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 160px;
+            padding: 10px;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            resize: vertical;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            background: white;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #222;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - 32px);
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">← back</a>
+    <div class="container">
+        <div class="editor-panel">
+            <h2>Code Editor</h2>
+
+            <div class="editor-group">
+                <h3>HTML</h3>
+                <textarea id="htmlCode"><h1>Hello!</h1>
+<p>This is a live preview.</p>
+<button onclick="sayHello()">Click me</button></textarea>
+            </div>
+
+            <div class="editor-group">
+                <h3>CSS</h3>
+                <textarea id="cssCode">body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: crimson;
+}
+
+p {
+    font-size: 18px;
+}
+
+button {
+    padding: 10px 14px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}</textarea>
+            </div>
+
+            <div class="editor-group">
+                <h3>JavaScript</h3>
+                <textarea id="jsCode">function sayHello() {
+    alert("Hello from the preview!");
+}</textarea>
+            </div>
+
+            <button id="runBtn">Run</button>
+        </div>
+
+        <div class="preview-panel">
+            <h2>Preview</h2>
+            <iframe id="preview"></iframe>
+        </div>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>
