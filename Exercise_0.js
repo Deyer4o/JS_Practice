@@ -7,8 +7,8 @@
 
         // --- Exercise 2: Event Listeners & State ---
 
-        // let colors = ['blue', 'lightblue', 'red', 'yellow'];
-        // let colorsCount = 0;
+        let colors = ['blue', 'lightblue', 'red', 'yellow'];
+        let colorsCount = 0;
 
         const counterSpan = document.querySelector('#counter');
         let count = 0;
@@ -17,12 +17,12 @@
             count++;
             counterSpan.innerText = count;
 
-            // btn.style.backgroundColor = colors[colorsCount];
-            // // colorsCount++;
-            // // if(colorsCount >= (colors.length) ) {
-            // //     colorsCount = 0;
-            // // }
-            // colorsCount = (colorsCount + 1) % colors.length;
+            btn.style.backgroundColor = colors[colorsCount];
+            // colorsCount++;
+            // if(colorsCount >= (colors.length) ) {
+            //     colorsCount = 0;
+            // }
+            colorsCount = (colorsCount + 1) % colors.length;
             
         });
 
