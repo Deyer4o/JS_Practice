@@ -1,4 +1,4 @@
-
+      
         const playgrounds = document.querySelectorAll('.playground');
 
         playgrounds.forEach((playground) => {
@@ -81,3 +81,4 @@ textareas.forEach((textarea) => {
         autoResize(textarea);
     });
 });
+
