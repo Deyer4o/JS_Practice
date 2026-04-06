@@ -3,134 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini HTML CSS JS Playground</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            height: 100vh;
-            width: 100%;
-        }
-
-        .editor-panel,
-        .preview-panel {
-            width: 50%;
-            padding: 16px;
-        }
-
-        .editor-panel {
-            background: #f4f4f4;
-            border-right: 1px solid #ccc;
-            overflow-y: auto;
-        }
-
-        .preview-panel {
-            background: #ffffff;
-        }
-
-        h2, h3 {
-            margin-top: 0;
-        }
-
-        .editor-group {
-            margin-bottom: 16px;
-        }
-
-        textarea {
-            width: 100%;
-            min-height: 160px;
-            padding: 10px;
-            font-family: Consolas, monospace;
-            font-size: 14px;
-            resize: vertical;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            background: white;
-        }
-
-        button {
-            padding: 10px 18px;
-            font-size: 14px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            background: #222;
-            color: white;
-        }
-
-        button:hover {
-            opacity: 0.9;
-        }
-
-        iframe {
-            width: 100%;
-            height: calc(100vh - 32px);
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            background: white;
-        }
-    </style>
+    <title>Multi Playground Showcase</title>
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
     <a href="index.html">← back</a>
-    <div class="container">
-        <div class="editor-panel">
-            <h2>Code Editor</h2>
+    <h1>HTML / CSS / JS Example Showcase</h1>
 
-            <div class="editor-group">
-                <h3>HTML</h3>
-                <textarea id="htmlCode"><h1>Hello!</h1>
-<p>This is a live preview.</p>
-<button onclick="sayHello()">Click me</button></textarea>
+    <div class="examples">
+
+        <!-- Example 1 -->
+        <div class="playground">
+            <div class="playground-header">
+                <h2>Example 1: HTML + CSS + JS</h2>
+                <div class="controls">
+                    <label><input type="checkbox" class="toggle-html" checked> HTML</label>
+                    <label><input type="checkbox" class="toggle-css" checked> CSS</label>
+                    <label><input type="checkbox" class="toggle-js" checked> JavaScript</label>
+                    <label><input type="checkbox" class="toggle-auto" checked> Auto update</label>
+                    <button class="run-btn">Run</button>
+                </div>
             </div>
 
-            <div class="editor-group">
-                <h3>CSS</h3>
-                <textarea id="cssCode">body {
+            <div class="playground-body">
+                <div class="editors">
+                    <div class="editor-group html-group">
+                        <h3>HTML</h3>
+                        <textarea class="html-code"><h1>Hello!</h1>
+<p>This is the first example.</p>
+<button onclick="sayHi()">Click me</button></textarea>
+                    </div>
+
+                    <div class="editor-group css-group">
+                        <h3>CSS</h3>
+                        <textarea class="css-code">body {
     font-family: Arial, sans-serif;
     padding: 20px;
 }
 
 h1 {
     color: crimson;
-}
-
-p {
-    font-size: 18px;
-}
-
-button {
-    padding: 10px 14px;
-    border: none;
-    background: black;
-    color: white;
-    cursor: pointer;
 }</textarea>
-            </div>
+                    </div>
 
-            <div class="editor-group">
-                <h3>JavaScript</h3>
-                <textarea id="jsCode">function sayHello() {
-    alert("Hello from the preview!");
+                    <div class="editor-group js-group">
+                        <h3>JavaScript</h3>
+                        <textarea class="js-code">function sayHi() {
+    alert("Hello from Example 1!");
 }</textarea>
-            </div>
+                    </div>
+                </div>
 
-            <button id="runBtn">Run</button>
+                <div class="preview-area">
+                    <iframe class="preview"></iframe>
+                </div>
+            </div>
         </div>
 
-        <div class="preview-panel">
-            <h2>Preview</h2>
-            <iframe id="preview"></iframe>
+        <!-- Example 2 -->
+        <div class="playground">
+            <div class="playground-header">
+                <h2>Example 2: Only HTML + CSS</h2>
+                <div class="controls">
+                    <label><input type="checkbox" class="toggle-html" checked> HTML</label>
+                    <label><input type="checkbox" class="toggle-css" checked> CSS</label>
+                    <label><input type="checkbox" class="toggle-js"> JavaScript</label>
+                    <label><input type="checkbox" class="toggle-auto" checked> Auto update</label>
+                    <button class="run-btn">Run</button>
+                </div>
+            </div>
+
+            <div class="playground-body">
+                <div class="editors">
+                    <div class="editor-group html-group">
+                        <h3>HTML</h3>
+                        <textarea class="html-code"><div class="card">
+    <h2>Simple Card</h2>
+    <p>This example uses only HTML and CSS.</p>
+</div></textarea>
+                    </div>
+
+                    <div class="editor-group css-group">
+                        <h3>CSS</h3>
+                        <textarea class="css-code">body {
+    padding: 20px;
+    background: #f0f7ff;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    border: 2px solid #99c2ff;
+}</textarea>
+                    </div>
+
+                    <div class="editor-group js-group hidden">
+                        <h3>JavaScript</h3>
+                        <textarea class="js-code"></textarea>
+                    </div>
+                </div>
+
+                <div class="preview-area">
+                    <iframe class="preview"></iframe>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <script src="test.js"></script>
