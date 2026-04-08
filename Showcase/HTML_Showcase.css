@@ -6,7 +6,7 @@ body {                              /* styling the body part of the page */
 
 section {                           /* styling each content section (card-like blocks) */
     background: white;            /* sets the section's BG color */
-    border: 1px solid gray;       /* adds light border around the section */
+    border: 1px solid gainsboro;  /* adds light border around the section */
     border-radius: 10px;            /* rounds corners */
     padding: 16px;                  /* sets inner spacing inside section */
     margin-bottom: 20px;            /* setting the space between sections */
@@ -21,4 +21,27 @@ section {                           /* styling each content section (card-like b
 code {                              /* styling inline code snippets */
     background: #eee;             /* light grey background for code */
     padding: 2px 4px;               /* small padding around code text */
+}
+
+.codeBox {
+    background: #eee;
+    border: 1px dashed #aaa;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.codeBox code {
+    display: block;
+}
+
+details {
+    margin: 10px 0;
+}
+
+summary {
+    display: list-item;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 16px;
 }
