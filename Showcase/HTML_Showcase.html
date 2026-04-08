@@ -2,46 +2,65 @@
 <!-- Deyan's HTML knowledge page -->
 <!-- =========================== -->
 
-<!-- This is a comment -->
+<!-- This is a comment-->
 <!-- you can't put comments inside tags' <> brackets -->
 
 <!DOCTYPE html> <!-- Declaring the document as HTML5 -->
 <!-- 
-HTML 5                  - <!DOCTYPE html>
-HTML 4.01(strict)       - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-HTML 4.01(transitional) - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-XHTML 1.0(strict)       - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-XHTML 1.0(transitional) - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-SVG (xml-based)         - <!DOCTYPE svg PUBLIC "...">
-XML (not DOCTYPE, different document format) - <?xml version="1.0"?>
-MathML (use <math> directly instead of this) - <math xmlns="http://www.w3.org/1998/Math/MathML">
+    HTML 5                  - <!DOCTYPE html>
+    HTML 4.01(strict)       - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    HTML 4.01(transitional) - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    XHTML 1.0(strict)       - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    XHTML 1.0(transitional) - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    SVG (xml-based)         - <!DOCTYPE svg PUBLIC "...">
+    XML (not DOCTYPE, different document format) - <?xml version="1.0"?>
+    MathML (use <math> directly instead of this) - <math xmlns="http://www.w3.org/1998/Math/MathML">
 -->
 
-<html
-    lang="en"
-    class="dark-mode"
-    id="root"
-    data-theme="dark"
-    dir="ltr"
-    aria-hidden="false"
-    title="Great title"
->
+<html lang="en" dir="ltr">
 <!-- 
-html             - root element of the page, should be only 1 section per page, unless loading we're loading multiple .html pages them inside iframes
-lang             - declares the language of the page
-dir              - declares the direction of  language (RTL for arabic , hebrew... ltr for english..)
-class, id, style - structure / styling
-data-theme       - data storage (data-*) - useful for global state things like dark mode toggle
-aria-hidden      - accessability attribute for using aria API
+    html - root element of the page, should be only 1 section per page, unless we're loading multiple .html pages them inside iframes
+    lang - declares the language 
+    dir  - declares reading direction (left to right / right to left)
 -->
 
-<head >
-    <meta charset="UTF-8">
-    <title>HTML_Showcase</title>
+<!-- An HTML document is divided into head and body-->
+<head>
+<!-- 
+    head            - used for metadata / page info & set-up
+    Attributes:
+    lang            - declares the language of the page
+    dir             - declares the direction of  language (RTL for arabic , hebrew... ltr for english..)
+    class, id       - structure
+    style           - styling (html-css bridge) (if this is also used in body, body styling covers html styling)
+    data-theme      - data storage (data-*) - useful for global state things like dark mode toggle
+    aria-hidden     - accessability attribute for using aria API
+    important tags:
+    <title>, <meta>, <link>, <style>, <script>, <base>
+-->
+    <meta charset="UTF-8"> <!-- This ensures UTF8 symbols are read correctly -->
+    <title>HTML_Showcase</title> <!-- Sets the title of the page -->
     <link rel="stylesheet" href="HTML_Showcase.css">
+    <!--
+    link         - used to connect to external files/resources
+    Attributes:
+    rel          - relationship to this page
+    "stylesheet" - file contains CSS styling rules
+    href         - hypertext reference
+    -->
+    <base href="" target="_self">
+    
 </head>
-<body>
-<a href="../../index.html">← back</a>
+<body> <!-- -->
+<!--
+    body            - The visible part of the page
+    Attributes:
+    background=""   - sets the background color or image of the web page
+    text="black"    - 
+-->
+    <a href="../../index.html">← back</a>
+    
+    
 
 </body>
 </html>
