@@ -38,17 +38,26 @@
     important tags:
     <title>, <meta>, <link>, <style>, <script>, <base>
 -->
-    <meta charset="UTF-8"> <!-- This ensures UTF8 symbols are read correctly -->
-    <title>HTML_Showcase</title> <!-- Sets the title of the page -->
-    <link rel="stylesheet" href="HTML_Showcase.css">
-    <!--
-    link         - used to connect to external files/resources
-    Attributes:
-    rel          - relationship to this page
-    "stylesheet" - file contains CSS styling rules
-    href         - hypertext reference
-    -->
-    <base href="" target="_self">
+
+ <!-- Adding the Prism external lib -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<!-- Adding those for code formatting-->
+
+<link href="PrismStyle.css" rel="stylesheet"/> <!-- Custom styling of Prism -->
+
+<meta charset="UTF-8"> <!-- This ensures UTF8 symbols are read correctly -->
+<title>HTML_Showcase</title> <!-- Sets the title of the page -->
+<link href="HTML_Showcase.css" rel="stylesheet" >
+<!--
+link         - used to connect to external files/resources
+Attributes:
+rel          - relationship to this page
+"stylesheet" - file contains CSS styling rules
+href         - hypertext reference
+-->
+<base href="" target="_self">
+
     
 </head>
 <body> <!-- -->
@@ -67,6 +76,12 @@
     <a href="../../index.html">← back</a>
     <br><br>
 
+
+
+<!-- ==================== -->
+<!-- Basic HTML structure -->
+<!-- ==================== -->
+
 <section>
     <details>
         <summary> 0. Basic HTML structure </summary>
@@ -81,17 +96,21 @@
 
         <div class="exampleBox">
             <div class="codeBlock">
-                <code>
-                    &lt;!DOCTYPE html&gt;               <br>
-                    &lt;html&gt;                        <br>
-                    &lt;head&gt;&lt;/head&gt;           <br>
-                    &lt;body&gt;&lt;/body&gt;           <br>
-                    &lt;/html&gt;
-                </code>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>            
             </div>
         </div>
     </details>
 </section>
+
+
+
+<!-- =================== -->
+<!-- Basic Text Elements -->
+<!-- =================== -->
 
 <section>
     <details>
@@ -100,14 +119,12 @@
         <!-- Headings -->
         <div class="exampleBox">
             <div class="codeBlock">
-                <code>
-                    &lt;h1&gt;This is a heading h1&lt;/h1&gt;<br>
-                    &lt;h2&gt;This is a heading h2&lt;/h2&gt;<br>
-                    &lt;h3&gt;This is a heading h3&lt;/h3&gt;<br>
-                    &lt;h4&gt;This is a heading h4&lt;/h4&gt;<br>
-                    &lt;h5&gt;This is a heading h5&lt;/h5&gt;<br>
-                    &lt;h6&gt;This is a heading h6&lt;/h6&gt;<br>
-                </code>
+<pre><code>&lt;h1&gt;This is a heading h1&lt;/h1&gt;<br>
+&lt;h2&gt;This is a heading h2&lt;/h2&gt;<br>
+&lt;h3&gt;This is a heading h3&lt;/h3&gt;<br>
+&lt;h4&gt;This is a heading h4&lt;/h4&gt;<br>
+&lt;h5&gt;This is a heading h5&lt;/h5&gt;<br>
+&lt;h6&gt;This is a heading h6&lt;/h6&gt;<br></code></pre>
             </div>
             <div class="resultBlock">
                 <h1>This is a heading h1</h1>
@@ -121,9 +138,9 @@
         <!-- Paragraphs -->
         <div class="exampleBox">
             <div class="codeBlock">
-                <code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code>
+<pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code></pre>
             </div>
-            <div class="resultBlock">
+            <div>
                 <p>This is a parahraph</p>
             </div>
         </div>
@@ -131,16 +148,14 @@
         <!-- Inline text -->
          <div class="exampleBox">
             <div class="codeBlock">
-                <code>
-                        &lt;p&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;strong&gt;Strong&lt;/strong&gt;,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;em&gt;emphasis&lt;/em&gt;,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;u&gt;underline&lt;/u&gt;,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;mark&gt;mark&lt;/mark&gt;,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;small&gt;small&lt;/small&gt;,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;s&gt;strike&lt;/s&gt;<br>
-                &lt;/p&gt;
-                </code>
+<pre><code>&lt;p&gt;
+    &lt;strong&gt;Strong&lt;/strong&gt;,
+    &lt;em&gt;emphasis&lt;/em&gt;,
+    &lt;u&gt;underline&lt;/u&gt;,
+    &lt;mark&gt;mark&lt;/mark&gt;,
+    &lt;small&gt;small&lt;/small&gt;,
+    &lt;s&gt;strike&lt;/s&gt;
+&lt;/p&gt;</code></pre>
             </div>
             <div class="resultBlock">
                 <p>
@@ -158,37 +173,55 @@
     </details>
 </section>
 
+
+
+<!-- ===== -->
+<!-- Links -->
+<!-- ===== -->
+
 <section>
     <details open>
         <summary>2. Links</summary>
         
         <div class="codeBlock">
-            <code>
-                Actual Code sits here. &lt;body&gt;&lt;/body&gt;
-            </code>
+<pre><code>Actual Code sits here. &lt;body&gt;&lt;/body&gt;</code></pre>
         </div>
     </details>
 </section>
 
 
 
+<!-- ================ -->
+<!-- Example Template -->
+<!-- ================ -->
+
 <section>
     <details>
         <summary>Example Template</summary>
-        <p>Title</p>
-        <p>Explanation...</p>
+        <p>Opening Explanation...</p>
         <ul>
             <li>list something 1</li>
             <li>list something 2</li>
         </ul>
 
         <div class="codeBlock">
-            <code>
-                Actual Code sits here. &lt;body&gt;&lt;/body&gt;
-            </code>
+<pre><code>&lt;p&gt;Actual Code sits here.&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;</code></pre>
         </div>
+        <div class="resultBlock">
+            <p>Actual Code sits here</p>
+            <div></div>
+        </div>
+
+        <p>Closing details</p>
     </details>
 </section>
+
+
+
+<!-- ===== -->
+<!-- Other -->
+<!-- ===== -->
 
 <section>
     <details>
@@ -196,7 +229,8 @@
         <img src="../Assets/anatomy-of-an-html-element.png" alt="HTML element">
     </details>
 </section>
-    
 
+
+<script src="HTML_Showcase.js"></script>
 </body>
 </html>
