@@ -10,29 +10,7 @@ section {                           /* styling each content section (card-like b
     border-radius: 10px;            /* rounds corners */
     padding: 16px;                  /* sets inner spacing inside section */
     margin-bottom: 20px;            /* setting the space between sections */
-}     
-     
-.exampleBox {                       /* styling example/demo boxes */
-    border: 1px dashed #aaa;      /* dashed border to visually separate demo content */
-    padding: 10px;                  /* inner spacing inside demo box */
-    margin-top: 10px;               /* space above the demo box */
-}     
-     
-code {                              /* styling inline code snippets */
-    background: #eee;             /* light grey background for code */
-    padding: 2px 4px;               /* small padding around code text */
-}
-
-.codeBox {
-    background: #eee;
-    border: 1px dashed #aaa;
-    padding: 10px;
-    padding-left: 15px;
-}
-
-.codeBox code {
-    display: block;
-}
+}    
 
 details {
     margin: 10px 0;
@@ -44,4 +22,26 @@ summary {
     cursor: pointer;
     font-weight: bold;
     padding: 12px 16px;
+}
+     
+.exampleBox {                       /* styling example/demo boxes */
+    border: 1px  #aaa;      /* dashed border to visually separate demo content */
+    padding: 10px;                  /* inner spacing inside demo box */
+    margin-top: 10px;               /* space above the demo box */
+}
+
+.resultBlock {
+    border: 1px solid #aaa;
+    border-top: none;      
+    padding: 10px;                 
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ 
+
+.codeBlock {
+    background: #eee;
+    border: 1px solid #aaa;
+    padding: 10px;
+    padding-left: 15px;
 }
