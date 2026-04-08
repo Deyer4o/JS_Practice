@@ -1,0 +1,55 @@
+
+.codeBlock pre[class*="language-"]{
+    background: transparent;   /* light grey */
+    color: #222;
+    padding: 5px;
+    padding-left: 0px;
+    margin: 0px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+}
+/* remove double background */
+code[class*="language-"] {
+    background: transparent;
+    color: rgb(82, 82, 82);
+    padding: 0px;
+}
+
+
+
+/* ===== BASIC TOKENS ===== */
+
+/* comments */
+.token.comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+/* tags: <p> */
+.token.tag {
+    color: darkblue;
+}
+
+/* attributes: class, href */
+.token.attr-name {
+    color: lightblue;
+}
+
+/* attribute values: "container" */
+.token.attr-value {
+    color: #ce9178;
+}
+.token.string {
+    color: darkorange;
+}
+
+/* punctuation: < > / = */
+.token.punctuation {
+    color: black;
+}
+
+/* keywords (for JS/CSS later) */
+.token.keyword {
+    color: #c586c0;
+}
