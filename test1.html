@@ -1,0 +1,287 @@
+<!-- ========================================================= -->
+<!-- HTML MASTER SHOWCASE — VISUAL + PRACTICAL STYLE           -->
+<!-- ========================================================= -->
+
+<!DOCTYPE html> <!-- HTML5 document -->
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive layout -->
+    <title>HTML Showcase</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            border: 1px solid gainsboro;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .demo {
+            border: 1px dashed #aaa;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+
+<body>
+<a href="index.html">← back</a>
+<!-- ========================================================= -->
+<!-- 1. BASIC TEXT ELEMENTS                                    -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Text Elements</h2>
+
+    <!-- Headings -->
+    <h1>This is h1</h1>
+    <h2>This is h2</h2>
+    <h3>This is h3</h3>
+
+    <!-- Paragraph -->
+    <p>This is what a paragraph looks like.</p>
+
+    <!-- Inline text -->
+    <p>
+        <strong>Strong</strong>,
+        <em>emphasis</em>,
+        <u>underline</u>,
+        <mark>mark</mark>,
+        <small>small</small>,
+        <s>strike</s>
+    </p>
+
+    <!-- Explanation -->
+    <p>
+        These are basic text elements. Most of them are inline (inside text), while headings and paragraphs are block elements.
+    </p>
+</section>
+
+<!-- ========================================================= -->
+<!-- 2. LINKS                                                  -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Links</h2>
+
+    <a href="https://example.com">Normal link</a><br>
+    <a href="https://example.com" target="_blank">Open in new tab</a><br>
+    <a href="#top">Jump to top</a>
+
+    <div class="demo">
+        <code>&lt;a href="..." target="_blank"&gt;</code>
+    </div>
+
+    <p>
+        The <code>href</code> attribute defines the destination.  
+        <code>target="_blank"</code> opens the link in a new tab.
+    </p>
+</section>
+
+<!-- ========================================================= -->
+<!-- 3. IMAGES                                                 -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Images</h2>
+
+    <img src="https://via.placeholder.com/150" alt="Example image" width="150">
+
+    <div class="demo">
+        <code>&lt;img src="..." alt="..."&gt;</code>
+    </div>
+
+    <p>
+        <code>src</code> = image source  
+        <code>alt</code> = description (important for accessibility)
+    </p>
+</section>
+
+<!-- ========================================================= -->
+<!-- 4. LISTS                                                  -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Lists</h2>
+
+    <!-- Unordered -->
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+    </ul>
+
+    <!-- Ordered -->
+    <ol>
+        <li>Step 1</li>
+        <li>Step 2</li>
+    </ol>
+
+    <div class="demo">
+        <code>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</code>
+    </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- 5. DIV vs SPAN                                            -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>div vs span</h2>
+
+    <div class="demo">
+        This is a div (block element)
+    </div>
+
+    <p>
+        This is a <span style="color:red;">span (inline element)</span> inside text.
+    </p>
+
+    <p>
+        <strong>div</strong> = block container  
+        <strong>span</strong> = inline container
+    </p>
+</section>
+
+<!-- ========================================================= -->
+<!-- 6. FORMS                                                  -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Forms</h2>
+
+    <form>
+        <!-- Text input -->
+        <input type="text" placeholder="Your name"><br><br>
+
+        <!-- Checkbox -->
+        <label>
+            <input type="checkbox"> Accept terms
+        </label><br><br>
+
+        <!-- Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="demo">
+        <code>&lt;input&gt;, &lt;button&gt;, &lt;form&gt;</code>
+    </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- 7. MEDIA                                                  -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Media</h2>
+
+    <audio controls>
+        <source src="audio.mp3">
+    </audio>
+
+    <br><br>
+
+    <video width="250" controls>
+        <source src="video.mp4">
+    </video>
+
+    <p>Audio and video use built-in browser controls.</p>
+</section>
+
+<!-- ========================================================= -->
+<!-- 8. TABLE                                                  -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Table</h2>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Deyan</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <p>Tables use rows (<code>tr</code>) and cells (<code>td</code>).</p>
+</section>
+
+<!-- ========================================================= -->
+<!-- 9. INTERACTIVE                                            -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Interactive</h2>
+
+    <details>
+        <summary>Click to open</summary>
+        <p>This content is hidden by default.</p>
+    </details>
+
+    <p>
+        <code>details</code> + <code>summary</code> create collapsible content.
+    </p>
+</section>
+
+<!-- ========================================================= -->
+<!-- 10. GLOBAL ATTRIBUTES DEMO                                -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>Global Attributes</h2>
+
+    <div
+        id="box1"
+        class="demo"
+        title="Hover text"
+        contenteditable="true"
+        draggable="true"
+        tabindex="0"
+        data-example="yes"
+    >
+        Editable, draggable box with multiple attributes.
+    </div>
+
+    <p>
+        Global attributes can be used on almost any element.
+    </p>
+</section>
+
+<!-- ========================================================= -->
+<!-- 11. SCRIPT EXAMPLE                                        -->
+<!-- ========================================================= -->
+
+<section>
+    <h2>JavaScript</h2>
+
+    <button onclick="sayHello()">Click me</button>
+
+    <p>
+        This button uses an inline event handler (<code>onclick</code>).
+    </p>
+</section>
+
+<script>
+    function sayHello() {
+        alert("Hello from JavaScript!");
+    }
+</script>
+
+</body>
+</html>
