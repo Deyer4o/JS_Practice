@@ -33,7 +33,7 @@ code[class*="language-"] {
 
 /* attributes: class, href */
 .token.attr-name {
-    color: lightblue;
+    color: rgb(25, 191, 247);
 }
 
 /* attribute values: "container" */
