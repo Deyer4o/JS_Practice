@@ -12,7 +12,9 @@ function escapeHTML(str) {
     return str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 // Ident code-source to <pre> ready code-source (using Loops)
@@ -62,16 +64,82 @@ function cleanIdentations(str){
     return lines.map(line => line.slice(minIdent)).join("\n");
 }
 
-document.querySelectorAll(".code-source").forEach(el => {
-    const rawHTML = el.innerHTML;
-    const textHTML = cleanIdentationsLoops(escapeHTML(rawHTML));
 
-    const codeBlock = `
-    <div class="codeBlock">
-        <pre><code class="language-html">${textHTML}</code></pre>
-    </div>
-        <div class="resultBlock">${rawHTML}</div>
+document.querySelectorAll(".code-source").forEach((el, index) => {
+
+    const rawCode = el.innerHTML;
+    const escapedCode = escapeHTML(cleanIdentations(rawCode));
+    
+    const showResultBlock = el.dataset.resultblock !== "false"; // true unless explicitly set to "false"
+    const language = el.dataset.language || "html";             // chosen one or "html" if undefined
+    let resultHTML = "";
+
+    if(showResultBlock) {
+        switch (language) {
+            case "html": {
+                resultHTML = `
+                    <div class="resultBlock">
+                        ${rawCode}
+                    </div>
+                `;
+                break;
+                }
+            case "css": {
+                const previewClass = `css-preview-${index}`;
+
+                resultHTML = `
+                    <div class="resultBlock">
+                        <div class="${previewClass}">
+                            <p>Preview Text</p>
+                            <button>Button</button>
+                            <div class="box">Box</div>
+                        </div>
+                        <style>
+                            .${previewClass} ${rawCode}
+                        </style>
+                    </div>
+                `;
+                break;
+                }
+            case "javascript": {
+                resultHTML = `
+                    <div class="resultBlock">
+                        <button class="run-js-btn-${index}">Run JS</button>
+                        <div class="js-output-${index}"></div>
+                    </div>
+                `;
+                break;
+                }
+            default: {
+                console.warn("Unexpected language var (not even defaulted to html)");
+                break;
+                }
+                
+        }
+    }
+
+    el.innerHTML = `
+        <div class="codeBlock">
+            <pre><code class="language-${language}">${escapedCode}</code></pre>
+        </div>
+        ${resultHTML}
     `;
 
-    el.innerHTML = codeBlock;
+    if (showResultBlock && language === "javascript") {
+        const button = el.querySelector(".run-js-btn-" + index);
+        const output = el.querySelector(".js-output-" + index);
+
+        button.addEventListener("click", () => {
+            try {
+                output.innerHTML = "";
+
+                const runCode = new Function("output", rawCode);
+                runCode(output);
+
+            } catch (error) {
+                output.textContent = "Error: " + error.message;
+            }
+        });
+    }
+
 })
