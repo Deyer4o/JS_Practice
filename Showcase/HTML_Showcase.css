@@ -9,7 +9,7 @@ section {                           /* styling each content section (card-like b
     border: 1px solid gainsboro;  /* adds light border around the section */
     border-radius: 10px;            /* rounds corners */
     padding: 16px;                  /* sets inner spacing inside section */
-    margin-bottom: 20px;            /* setting the space between sections */
+    margin-bottom: 10px;            /* setting the space between sections */
 }    
 
 details {
