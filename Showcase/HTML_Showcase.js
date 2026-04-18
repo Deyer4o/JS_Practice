@@ -2,7 +2,6 @@
 // To be removed! - what if you want to add css/js style?
 document.querySelectorAll("code:not([class])").forEach(element => {
     element.classList.add("language-html");
-    console.log("this runs");
 })
 
 
@@ -78,7 +77,7 @@ document.querySelectorAll(".code-source").forEach((el, index) => {
         switch (language) {
             case "html": {
                 resultHTML = `
-                    <div class="resultBlock">
+                    <div class="result-box">
                         ${rawCode}
                     </div>
                 `;
@@ -88,7 +87,7 @@ document.querySelectorAll(".code-source").forEach((el, index) => {
                 const previewClass = `css-preview-${index}`;
 
                 resultHTML = `
-                    <div class="resultBlock">
+                    <div class="result-box">
                         <div class="${previewClass}">
                             <p>Preview Text</p>
                             <button>Button</button>
@@ -103,7 +102,7 @@ document.querySelectorAll(".code-source").forEach((el, index) => {
                 }
             case "javascript": {
                 resultHTML = `
-                    <div class="resultBlock">
+                    <div class="result-box">
                         <button class="run-js-btn-${index}">Run JS</button>
                         <div class="js-output-${index}"></div>
                     </div>
@@ -119,10 +118,10 @@ document.querySelectorAll(".code-source").forEach((el, index) => {
     }
 
     el.innerHTML = `
-        <div class="codeBlock">
-            <pre><code class="language-${language}">${escapedCode}</code></pre>
-        </div>
-        ${resultHTML}
+            <div class="code-box" style="border-bottom-left-radius: 0px; border-bottom-right-radius: 0px">
+                <pre><code class="language-${language}">${escapedCode}</code></pre>
+            </div>
+            ${resultHTML}
     `;
 
     if (showResultBlock && language === "javascript") {

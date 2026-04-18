@@ -1,6 +1,6 @@
 
-.codeBlock pre[class*="language-"]{
-    background: transparent;   /* light grey */
+.code-box pre[class*="language-"]{
+    background: transparent;    /* light grey */
     color: #222;
     padding: 5px;
     padding-left: 0px;
@@ -9,9 +9,9 @@
     overflow-x: auto;
     font-size: 0.9rem;
 }
-/* remove double background */
+
 code[class*="language-"] {
-    background: transparent;
+    background: transparent;    /* remove double background */
     color: rgb(82, 82, 82);
     padding: 0px;
 }

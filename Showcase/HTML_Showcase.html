@@ -89,7 +89,7 @@ href         - hypertext reference
     <details>
         <summary> 0. Basic HTML structure </summary>
         
-        <p> An HTML document consists of: </p>
+        <h3> An HTML document consists of: </h3>
         <ul>
             <li>type: declaration of version/type (e.g.  &lt;!DOCTYPE html&gt; for HTML5)</li>
             <li>root: the root element of the page (&lt;html&gt;&lt;/html&gt;)</li>
@@ -97,14 +97,12 @@ href         - hypertext reference
             <li>body: which is the visible part of the website</li>
         </ul>
 
-        <div class="exampleBox">
-            <div class="codeBlock">
+        <div class="code-box">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;&lt;/head&gt;
 &lt;body&gt;&lt;/body&gt;
 &lt;/html&gt;</code></pre>            
-            </div>
         </div>
     </details>
 </section>
@@ -120,37 +118,34 @@ href         - hypertext reference
         <summary>1. Basic Text Elements</summary>
         
         <!-- Headings -->
-        <div class="exampleBox">
-            <div class="codeBlock">
+        <div class="code-box no-bottom-radius" >
 <pre><code>&lt;h1&gt;This is a heading h1&lt;/h1&gt;<br>
 &lt;h2&gt;This is a heading h2&lt;/h2&gt;<br>
 &lt;h3&gt;This is a heading h3&lt;/h3&gt;<br>
 &lt;h4&gt;This is a heading h4&lt;/h4&gt;<br>
 &lt;h5&gt;This is a heading h5&lt;/h5&gt;<br>
 &lt;h6&gt;This is a heading h6&lt;/h6&gt;<br></code></pre>
-            </div>
-            <div class="resultBlock">
-                <h1>This is a heading h1</h1>
-                <h2>This is a heading h2</h2>
-                <h3>This is a heading h3</h3>
-                <h4>This is a heading h4</h4>
-                <h5>This is a heading h5</h5>
-                <h6>This is a heading h6</h6>
-            </div>
         </div>
+        <div class="result-box">
+            <h1>This is a heading h1</h1>
+            <h2>This is a heading h2</h2>
+            <h3>This is a heading h3</h3>
+            <h4>This is a heading h4</h4>
+            <h5>This is a heading h5</h5>
+            <h6>This is a heading h6</h6>
+        </div>
+        <br>
         <!-- Paragraphs -->
-        <div class="exampleBox">
-            <div class="codeBlock">
+        
+        <div class="code-box no-bottom-radius">
 <pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code></pre>
-            </div>
-            <div>
-                <p>This is a parahraph</p>
-            </div>
         </div>
-
+        <div class="result-box">
+            <p>This is a parahraph</p>
+        </div>
+        <br>
         <!-- Inline text -->
-         <div class="exampleBox">
-            <div class="codeBlock">
+        <div class="code-box no-bottom-radius">
 <pre><code>&lt;p&gt;
     &lt;strong&gt;Strong&lt;/strong&gt;,
     &lt;em&gt;emphasis&lt;/em&gt;,
@@ -159,17 +154,16 @@ href         - hypertext reference
     &lt;small&gt;small&lt;/small&gt;,
     &lt;s&gt;strike&lt;/s&gt;
 &lt;/p&gt;</code></pre>
-            </div>
-            <div class="resultBlock">
-                <p>
-                    <strong>Strong</strong>,
-                    <em>emphasis</em>,
-                    <u>underline</u>,
-                    <mark>mark</mark>,
-                    <small>small</small>,
-                    <s>strike</s>
-                </p>
-            </div>
+        </div>
+        <div class="result-box">
+            <p>
+                <strong>Strong</strong>,
+                <em>emphasis</em>,
+                <u>underline</u>,
+                <mark>mark</mark>,
+                <small>small</small>,
+                <s>strike</s>
+            </p>
         </div>
         <p>These are some basic text elements. There are inline elements 
         (inside text) and block elements (like headers or parahraphs).</p>
@@ -186,7 +180,7 @@ href         - hypertext reference
     <details open>
         <summary>2. Links</summary>
         
-        <div class="codeBlock">
+        <div class="code-box">
 <pre><code>Actual Code sits here. &lt;body&gt;&lt;/body&gt;</code></pre>
         </div>
     </details>
@@ -206,16 +200,13 @@ href         - hypertext reference
             <li>list something 1</li>
             <li>list something 2</li>
         </ul>
+        <div class="code-title">
 
-        <div class="codeBlock">
-<pre><code>&lt;p&gt;Actual Code sits here.&lt;/p&gt;
-&lt;div&gt;&lt;/div&gt;</code></pre>
         </div>
-        <div class="resultBlock">
+        <div class="code-source">
             <p>Actual Code sits here</p>
             <div></div>
         </div>
-
         <p>Closing details</p>
     </details>
 </section>
@@ -234,26 +225,17 @@ href         - hypertext reference
             <li>list something 1</li>
             <li>list something 2</li>
         </ul>
-
-        <div class="codeBlock">
-<pre><code>&lt;p&gt;Actual Code sits here.&lt;/p&gt;
-&lt;div&gt;&lt;/div&gt;</code></pre>
-        </div>
-        <div class="resultBlock">
+        <div class="code-source">
             <p>Actual Code sits here</p>
             <div></div>
         </div>
-
         <p>Closing details</p>
     </details>
 </section>
 
-
-
-
-<!-- ================ -->
-<!-- Example Template -->
-<!-- ================ -->
+<!-- ==================== -->
+<!-- Example Template OLD -->
+<!-- ==================== -->
 
 <section>
     <details>
@@ -264,11 +246,11 @@ href         - hypertext reference
             <li>list something 2</li>
         </ul>
 
-        <div class="codeBlock">
+        <div class="code-box">
 <pre><code>&lt;p&gt;Actual Code sits here.&lt;/p&gt;
 &lt;div&gt;&lt;/div&gt;</code></pre>
         </div>
-        <div class="resultBlock">
+        <div class="result-box">
             <p>Actual Code sits here</p>
             <div></div>
         </div>
@@ -295,10 +277,13 @@ href         - hypertext reference
 </section>
 
 
-<!-- <div class="jsSections"></div> -->
+<!-- ========================================================= -->
+<!-- JS generated tests                                         -->
+<!-- ========================================================= -->
+
  <section>
     <details>
-        <summary>JS generated</summary>
+        <summary>JS generated (tests)</summary>
         <section>
             <details>
                 <summary>This is a test for printing a list</summary>
@@ -345,7 +330,7 @@ href         - hypertext reference
         <section>
             <details>
                 <summary>JavaScript test</summary>
-                <div class="code-source" data-language="javascript" data-resultblock="false">
+                <div class="code-source" data-language="javascript" data-result-box="false">
                     console.log("Hello from console");
                     output.innerHTML = "Also visible";
                 </div>
