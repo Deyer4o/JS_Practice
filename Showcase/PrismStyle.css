@@ -1,6 +1,6 @@
-
+pre,
 .code-box pre[class*="language-"]{
-    background: transparent;    /* light grey */
+    background: transparent;
     color: #222;
     padding: 5px;
     padding-left: 0px;
@@ -10,12 +10,23 @@
     font-size: 0.9rem;
 }
 
+code,
 code[class*="language-"] {
-    background: transparent;    /* remove double background */
+    background: transparent;
     color: rgb(82, 82, 82);
     padding: 0px;
 }
 
+.code-box pre[class*="language-"],
+.code-box code[class*="language-"] {
+    white-space: pre-wrap ;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+:not(pre) > code[class*="language-"] {
+    background: #eee;;
+}
 
 
 /* ===== BASIC TOKENS ===== */
