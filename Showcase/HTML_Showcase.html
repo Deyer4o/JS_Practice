@@ -81,9 +81,9 @@ href         - hypertext reference
 <details>
 <summary>HTML Basics</summary>
 
-<!-- ==================== -->
-<!-- Basic HTML structure -->
-<!-- ==================== -->
+<!-- ======================= -->
+<!-- 0. Basic HTML structure -->
+<!-- ======================= -->
 
 <section>
     <details>
@@ -109,9 +109,9 @@ href         - hypertext reference
 
 
 
-<!-- =================== -->
-<!-- Basic Text Elements -->
-<!-- =================== -->
+<!-- ====================== -->
+<!-- 1. Basic Text Elements -->
+<!-- ====================== -->
 
 <section>
     <details>
@@ -126,7 +126,7 @@ href         - hypertext reference
 &lt;h5&gt;This is a heading h5&lt;/h5&gt;<br>
 &lt;h6&gt;This is a heading h6&lt;/h6&gt;<br></code></pre>
         </div>
-        <div class="result-box">
+        <div class="code-result">
             <h1>This is a heading h1</h1>
             <h2>This is a heading h2</h2>
             <h3>This is a heading h3</h3>
@@ -140,7 +140,7 @@ href         - hypertext reference
         <div class="code-box no-bottom-radius">
 <pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code></pre>
         </div>
-        <div class="result-box">
+        <div class="code-result">
             <p>This is a parahraph</p>
         </div>
         <br>
@@ -155,7 +155,7 @@ href         - hypertext reference
     &lt;s&gt;strike&lt;/s&gt;
 &lt;/p&gt;</code></pre>
         </div>
-        <div class="result-box">
+        <div class="code-result">
             <p>
                 <strong>Strong</strong>,
                 <em>emphasis</em>,
@@ -172,20 +172,109 @@ href         - hypertext reference
 
 
 
-<!-- ===== -->
-<!-- Links -->
-<!-- ===== -->
+<!-- ======= -->
+<!-- 2.Links -->
+<!-- ======= -->
 
 <section>
-    <details open>
+    <details>
         <summary>2. Links</summary>
-        
-        <div class="code-box">
-<pre><code>Actual Code sits here. &lt;body&gt;&lt;/body&gt;</code></pre>
+        <p>Some basic links:</p>
+        <div class="code-source">
+            <a href="../index.html">Local link</a><br>
+            <a href="https://www.deyanmohamed.com" target="_blank">
+                Online link that opens in a new tab
+            </a><br>
+            <a href="#top">Jump to top</a>
         </div>
     </details>
 </section>
 
+
+
+<!-- ========= -->
+<!-- 3. Images -->
+<!-- ========= -->
+
+<section>
+    <details>
+        <summary>3. Images</summary>
+        <p>Image examples:</p>
+        <div class="code-source" data-language="html" data-title=""  data-result="true">
+            <!-- Local image: -->
+            <img 
+                src="../Assets/CantBelieveThatWorked.gif" 
+                alt="ExampleImage 1" 
+                width="150"
+            >
+        </div>
+        <p>You could also have an online-hosted image as a source:</p>
+        <div class="code-source" data-language="html" data-title=""  data-result="true">
+           <!-- Online image -->
+            <img
+                src="https://i.pinimg.com/originals/f1/ce/f5/f1cef53b4fcc19a43e124a72281a93fa.gif" 
+                alt="ExampleImage 2" 
+                width="200"
+            >
+        </div>
+        <p>For a back-up you can use <code class="language-html">&lt;img src="" onerror=""&gt;</code>:</p>
+        <div class="code-source" data-result="false">
+            <img src="UnreachableUrl" onerror="this.onerror=null; this.src='../Assets/TrustMeItWorks.gif';">
+        </div>
+    </details>
+</section>
+
+
+<!-- =============== -->
+<!-- 5. DIV and SPAN -->
+<!-- =============== -->
+
+<section>
+    <details>
+        <summary>5. DIV and SPAN</summary>
+        <div class="code-source">
+            <div style="border: 1px solid green;">
+                This is a div (block element)
+            </div>
+            <p>
+                This is a 
+                <span style="border: 1px solid red;">
+                    span (inline element)
+                </span> 
+                inside text.
+            </p>
+        </div>
+        <p>
+        <strong>div</strong>  = block container  <br>
+        <strong>span</strong> = inline container
+    </p>
+    </details>
+</section>
+
+
+<!-- ============== -->
+<!-- 6. Simple Form -->
+<!-- ============== -->
+
+<section>
+    <details>
+        <summary>6. Simple Form</summary>
+        <div class="code-source">
+    <form>
+        <!-- Text input -->
+        <input type="text" placeholder="Your name"><br><br>
+
+        <!-- Checkbox -->
+        <label>
+            <input type="checkbox"> Accept terms
+        </label><br><br>
+
+        <!-- Button -->
+        <button type="submit">Submit</button>
+    </form>
+        </div>
+    </details>
+</section>
 
 
 <!-- ================ -->
@@ -195,23 +284,26 @@ href         - hypertext reference
 <section>
     <details>
         <summary>Example Template</summary>
-        <p>Opening Explanation...</p>
-        <ul>
-            <li>list something 1</li>
-            <li>list something 2</li>
-        </ul>
-        <div class="code-title">
+        <div class="code-source"></div>
+    </details>
+</section>
 
-        </div>
-        <div class="code-source">
-            <p>Actual Code sits here</p>
-            <div></div>
+<!-- ================ -->
+<!-- Example Template -->
+<!-- ================ -->
+
+<section>
+    <details>
+        <summary>Example Template</summary>
+        <p>Opening Explanation...</p>
+        <div class="code-source" data-language="css" data-title="Example.css"  data-result="false">
+            .test {
+                color: red;
+            }
         </div>
         <p>Closing details</p>
     </details>
 </section>
-
-
 
 <!-- ================ -->
 <!-- Example Template -->
@@ -250,7 +342,7 @@ href         - hypertext reference
 <pre><code>&lt;p&gt;Actual Code sits here.&lt;/p&gt;
 &lt;div&gt;&lt;/div&gt;</code></pre>
         </div>
-        <div class="result-box">
+        <div class="code-result">
             <p>Actual Code sits here</p>
             <div></div>
         </div>
@@ -330,7 +422,7 @@ href         - hypertext reference
         <section>
             <details>
                 <summary>JavaScript test</summary>
-                <div class="code-source" data-language="javascript" data-result-box="false">
+                <div class="code-source" data-language="javascript" data-result="false">
                     console.log("Hello from console");
                     output.innerHTML = "Also visible";
                 </div>

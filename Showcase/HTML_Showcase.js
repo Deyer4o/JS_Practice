@@ -69,15 +69,19 @@ document.querySelectorAll(".code-source").forEach((el, index) => {
     const rawCode = el.innerHTML;
     const escapedCode = escapeHTML(cleanIdentations(rawCode));
     
-    const showResultBlock = el.dataset.resultblock !== "false"; // true unless explicitly set to "false"
-    const language = el.dataset.language || "html";             // chosen one or "html" if undefined
+    const showResult = el.dataset.result !== "false";   // true unless explicitly set to "false"
+    const language = el.dataset.language || "html";     // chosen one or "html" if undefined
+    const title = el.dataset.title || "";
+    let resultTitle = "";
     let resultHTML = "";
+    let codeBoxStyle = "";
 
-    if(showResultBlock) {
+
+    if(showResult) {
         switch (language) {
             case "html": {
                 resultHTML = `
-                    <div class="result-box">
+                    <div class="code-result">
                         ${rawCode}
                     </div>
                 `;
@@ -87,7 +91,7 @@ document.querySelectorAll(".code-source").forEach((el, index) => {
                 const previewClass = `css-preview-${index}`;
 
                 resultHTML = `
-                    <div class="result-box">
+                    <div class="code-result">
                         <div class="${previewClass}">
                             <p>Preview Text</p>
                             <button>Button</button>
@@ -102,7 +106,7 @@ document.querySelectorAll(".code-source").forEach((el, index) => {
                 }
             case "javascript": {
                 resultHTML = `
-                    <div class="result-box">
+                    <div class="code-result">
                         <button class="run-js-btn-${index}">Run JS</button>
                         <div class="js-output-${index}"></div>
                     </div>
@@ -117,14 +121,31 @@ document.querySelectorAll(".code-source").forEach((el, index) => {
         }
     }
 
+    if(title !== "") {
+        resultTitle = `
+            <div class="code-title">
+                <span>${title}</span>
+            </div>
+        `;
+    }
+
+    if(resultHTML !== "") {
+       codeBoxStyle = "border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;";
+    }
+    if(resultTitle !== ""){
+        codeBoxStyle += " border-top-left-radius: 0px;";
+    }
+
+
     el.innerHTML = `
-            <div class="code-box" style="border-bottom-left-radius: 0px; border-bottom-right-radius: 0px">
+            ${resultTitle}
+            <div class="code-box" style = "${codeBoxStyle}">
                 <pre><code class="language-${language}">${escapedCode}</code></pre>
             </div>
             ${resultHTML}
     `;
 
-    if (showResultBlock && language === "javascript") {
+    if (showResult && language === "javascript") {
         const button = el.querySelector(".run-js-btn-" + index);
         const output = el.querySelector(".js-output-" + index);
 

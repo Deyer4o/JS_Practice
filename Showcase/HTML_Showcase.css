@@ -8,6 +8,7 @@ body {                              /* styling the body part of the page */
     padding: 20px;                  /* default inner spacing */
 }
 
+
 /* ======== */
 /* Sections */
 /* ======== */
@@ -43,7 +44,7 @@ summary {
     --code-examples-padding: 10px;
 }
 
-.example-box {                       /* styling example/demo boxes */
+.example-box {/*to be renamed*/                       /* styling example/demo boxes */
     border: 1px #aaa;             /* dashed border to visually separate demo content */
     padding: var(--code-examples-padding, 10px); /* inner spacing inside demo box */
     margin-top: 10px;               /* space above the demo box */
@@ -57,9 +58,10 @@ summary {
     border-left: 3px solid gray;
 
     border-radius: var(--code-examples-radius, 5px);
+    /* border-top-left-radius: 0px; */
 }
 
-.result-box {
+.code-result {/*to be renamed*/
     border: 1px solid #aaa;
     border-top: none;      
     padding: 8px calc(var(--code-examples-padding, 10px) + 2px);          
@@ -71,6 +73,22 @@ summary {
     /* var(--value, 5px) */
     /* var(--value, var(--fallback-value)) */
     /* color: var(--a, var(--b, var(--c, black))); */
+}
+
+/*
+.code-title {
+    margin-bottom: 0px;
+}*/
+
+.code-title span {
+    display: inline-block;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 6px 12px 5px 12px;
+    background: #fff;
+    font-size: small;
+    margin-left: 1px;
 }
 
 
