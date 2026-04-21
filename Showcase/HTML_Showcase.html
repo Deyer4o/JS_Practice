@@ -217,7 +217,7 @@ href         - hypertext reference
                 width="200"
             >
         </div>
-        <p>For a back-up you can use <code class="language-html">&lt;img src="" onerror=""&gt;</code>:</p>
+        <p>For a back-up you can use <code>onerror=""</code>:</p>
         <div class="code-source" data-result="false">
             <img src="UnreachableUrl" onerror="this.onerror=null; this.src='../Assets/TrustMeItWorks.gif';">
         </div>
@@ -260,117 +260,151 @@ href         - hypertext reference
     <details>
         <summary>6. Simple Form</summary>
         <div class="code-source">
-    <form>
-        <!-- Text input -->
-        <input type="text" placeholder="Your name"><br><br>
+            <form>
+                <input type="text" placeholder="Enter name" id="6-simple-form-text"> <br>
+                <label>
+                    <input type="checkbox" id="6-simple-form-checkbox"> Remember me
+                </label> <br>
+                <button type="button" onclick="buttonSimpleForm()">Submit</button>
+            </form>
+        </div>
+        <p>You could change the button type to <strong>button</strong>, <strong>reset</strong> and <strong>submit</strong>:</p>
+        <div class="code-source" data-result="false">
+            <!-- Does nothing by default (has to be handled with JS) -->
+            <button type="button"></button>
 
-        <!-- Checkbox -->
-        <label>
-            <input type="checkbox"> Accept terms
-        </label><br><br>
+            <!-- Clears all fields in the form -->
+            <button type="reset"></button>
 
-        <!-- Button -->
-        <button type="submit">Submit</button>
-    </form>
+            <!-- Submits the form by default -->
+            <button type="submit"></button>
         </div>
     </details>
 </section>
 
 
-<!-- ================ -->
-<!-- Example Template -->
-<!-- ================ -->
+<!-- ======== -->
+<!-- 7. Media -->
+<!-- ======== -->
 
 <section>
     <details>
-        <summary>Example Template</summary>
-        <div class="code-source"></div>
-    </details>
-</section>
-
-<!-- ================ -->
-<!-- Example Template -->
-<!-- ================ -->
-
-<section>
-    <details>
-        <summary>Example Template</summary>
-        <p>Opening Explanation...</p>
-        <div class="code-source" data-language="css" data-title="Example.css"  data-result="false">
-            .test {
-                color: red;
-            }
-        </div>
-        <p>Closing details</p>
-    </details>
-</section>
-
-<!-- ================ -->
-<!-- Example Template -->
-<!-- ================ -->
-
-<section>
-    <details>
-        <summary>Example Template</summary>
-        <p>Opening Explanation...</p>
-        <ul>
-            <li>list something 1</li>
-            <li>list something 2</li>
-        </ul>
+        <summary>7. Media</summary>
+        <p><strong>Music</strong> example:</p>
         <div class="code-source">
-            <p>Actual Code sits here</p>
-            <div></div>
+            <audio controls>
+                <source src="../Assets/chill_lofi.mp3">
+            </audio>
         </div>
-        <p>Closing details</p>
+        <p><strong>Video</strong> example:</p>
+        <div class="code-source">
+            <video width="250" controls>
+                <source src="../Assets/ExampleVideo.mp4">
+            </video>
+        </div>
     </details>
 </section>
 
-<!-- ==================== -->
-<!-- Example Template OLD -->
-<!-- ==================== -->
+
+<!-- ======== -->
+<!-- 8. Table -->
+<!-- ======== -->
 
 <section>
     <details>
-        <summary>Example Template</summary>
-        <p>Opening Explanation...</p>
-        <ul>
-            <li>list something 1</li>
-            <li>list something 2</li>
-        </ul>
-
-        <div class="code-box">
-<pre><code>&lt;p&gt;Actual Code sits here.&lt;/p&gt;
-&lt;div&gt;&lt;/div&gt;</code></pre>
+        <summary>8. Table</summary>
+        <p>Simple <strong>table</strong> example:</p>
+        <div class="code-source">
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <th>Ivan</th>
+                    <th>26</th>
+                </tr>
+            </table>
         </div>
-        <div class="code-result">
-            <p>Actual Code sits here</p>
-            <div></div>
-        </div>
-
-        <p>Closing details</p>
+        <p>Tables use rows (<code>tr</code>) and cells (<code>td</code>).</p>
     </details>
 </section>
 
 
-
-
-<!-- ===== -->
-<!-- Other -->
-<!-- ===== -->
+<!-- ============== -->
+<!-- 9. Interactive -->
+<!-- ============== -->
 
 <section>
     <details>
-        <summary>Other</summary>
-        <img src="../Assets/anatomy-of-an-html-element.png" alt="HTML element">
+        <summary>9. Interactive</summary>
+        <div class="code-source">
+            <details>
+                <summary>Click to open</summary>
+                <p>This content is hidden by default.</p>
+            </details>
+
+            <p>
+                <code>details</code> + <code>summary</code> create collapsible content.
+            </p>
+        </div>
     </details>
 </section>
+
+
+<!-- ===================== -->
+<!-- 10. Global Attributes -->
+<!-- ===================== -->
+
+<section>
+    <details>
+        <summary>10. Global Attributes</summary>
+        <div class="code-source">
+            <div
+                id="box1"
+                class="demo"
+                title="Gover text"
+                contenteditable="true"
+                draggable="true"
+                tabindex="0"
+                data-example="yes"
+                style="border: 1px solid black;"
+            >
+                Editable, draggable box with multiple attributes.
+            </div>
+            <br>
+            <div id="drop" class="drop" style="border: 1px solid black;">
+                Drop Here
+            </div>
+        </div>
+        <p>
+        Global attributes can be used on almost every element.
+        </p>
+    </details>
+</section>
+
+
+<!-- ================== -->
+<!-- 11. Script example -->
+<!-- ================== -->
+
+<section>
+    <details>
+        <summary>11. Script example</summary>
+        <div class="code-source">
+            
+        </div>
+    </details>
+</section>
+
+
 
 </details>
 </section>
 
 
 <!-- ========================================================= -->
-<!-- JS generated tests                                         -->
+<!-- JS generated tests                                        -->
 <!-- ========================================================= -->
 
  <section>
@@ -426,6 +460,110 @@ href         - hypertext reference
                     console.log("Hello from console");
                     output.innerHTML = "Also visible";
                 </div>
+            </details>
+        </section>
+                
+        <!-- ======== -->
+        <!-- 8. Table -->
+        <!-- ======== -->
+
+        <section>
+            <details>
+                <summary>8. Table</summary>
+                <div class="code-source">
+                    
+                </div>
+            </details>
+        </section>
+
+
+        <!-- ======== -->
+        <!-- 8. Table -->
+        <!-- ======== -->
+
+        <section>
+            <details>
+                <summary>8. Table</summary>
+                <div class="code-source">
+                    
+                </div>
+            </details>
+        </section>
+
+        <!-- ================ -->
+        <!-- Example Template -->
+        <!-- ================ -->
+
+        <section>
+            <details>
+                <summary>Example Template</summary>
+                <p>Opening Explanation...</p>
+                <div class="code-source" data-language="css" data-title="Example.css"  data-result="false">
+                    .test {
+                        color: red;
+                    }
+                </div>
+                <p>Closing details</p>
+            </details>
+        </section>
+
+        <!-- ================ -->
+        <!-- Example Template -->
+        <!-- ================ -->
+
+        <section>
+            <details>
+                <summary>Example Template</summary>
+                <p>Opening Explanation...</p>
+                <ul>
+                    <li>list something 1</li>
+                    <li>list something 2</li>
+                </ul>
+                <div class="code-source">
+                    <p>Actual Code sits here</p>
+                    <div></div>
+                </div>
+                <p>Closing details</p>
+            </details>
+        </section>
+
+        <!-- ==================== -->
+        <!-- Example Template OLD -->
+        <!-- ==================== -->
+
+        <section>
+            <details>
+                <summary>Example Template</summary>
+                <p>Opening Explanation...</p>
+                <ul>
+                    <li>list something 1</li>
+                    <li>list something 2</li>
+                </ul>
+
+                <div class="code-box">
+        <pre><code>&lt;p&gt;Actual Code sits here.&lt;/p&gt;
+        &lt;div&gt;&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code-result">
+                    <p>Actual Code sits here</p>
+                    <div></div>
+                </div>
+
+                <p>Closing details</p>
+            </details>
+        </section>
+
+
+
+
+        <!-- ===== -->
+        <!-- Other -->
+        <!-- ===== -->
+
+        <section>
+            <details>
+                <summary>Other</summary>
+                <img src="../Assets/anatomy-of-an-html-element.png" alt="HTML element">
             </details>
         </section>
 
