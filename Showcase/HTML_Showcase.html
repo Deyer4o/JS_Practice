@@ -392,13 +392,32 @@ href         - hypertext reference
     <details>
         <summary>11. Script example</summary>
         <div class="code-source">
-            
+            <p>Press the button:</p>
+            <button onclick="sayHi()">[click]</button>
+            <script>
+                function sayHi() {
+                    alert("Hello from JavaScript!");
+                }
+            </script>
+        </div>
+        <p>
+            This button uses an inline event handler (<code>onclick</code>).
+        </p>
+        <p>
+            Alternatively you could just use <code>&lt;button id="name"&gt;&lt;/button&gt;</code>
+            and use an event listener with <strong>javascript</strong>.
+        </p>
+        <div class="code-source" data-title="Example.js" data-result="false" data-language="javascript">
+            document.getElementById("test-btn-1").addEventListener("click", () => {
+                alert("Hello from JavaScript!"); }); 
+        </div>
+        <br>
+        <div class="code-source" data-title="Example.html" data-result="true">
+            <p>Press the button:</p>
+            <button id="test-btn-1">[click]</button>
         </div>
     </details>
 </section>
-
-
-
 </details>
 </section>
 

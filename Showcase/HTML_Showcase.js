@@ -222,3 +222,100 @@ dropZone.addEventListener('drop', (e) => {
         // dropZone.appendChild(draggedElement);
     }
 });
+
+
+document.getElementById("test-btn-1").addEventListener("click", () => {
+    alert("Hello from JavaScript!"); 
+});
+
+
+// =========================
+// MOUSE EVENTS
+// =========================
+
+"click"        // mouse click (most common)
+"dblclick"     // double click (with mouse)
+"mousedown"    // mouse button pressed down
+"mouseup"      // mouse button released
+"mousemove"    // mouse moving
+"mouseenter"   // mouse enters element (no bubbling)
+"mouseleave"   // mouse leaves element (no bubbling)
+"mouseover"    // mouse enters (bubbles)
+"mouseout"     // mouse leaves (bubbles)
+
+// =========================
+// KEYBOARD EVENTS
+// =========================
+
+"keydown"      // key pressed (recommended)
+"keyup"        // key released - fires for all keys (including Shift, Ctrl, etc)
+"keypress"     // older, avoid - fires for characters only
+
+// =========================
+// INPUT / FORM EVENTS
+// =========================
+
+"input"        // fires on every change (typing, etc.)
+"change"       // fires when change is finished (blur or enter)
+"focus"        // element gains focus
+"blur"         // element loses focus
+"submit"       // form submitted
+"reset"        // form reset
+
+// =========================
+// DRAG & DROP EVENTS
+// =========================
+
+"dragstart"    // start dragging
+"drag"         // while dragging
+"dragend"      // drag finished
+"dragover"     // dragged item over target (needs preventDefault)
+"dragleave"    // leaves drop zone
+"drop"         // dropped on target
+
+// =========================
+// WINDOW / DOCUMENT EVENTS
+// =========================
+
+"DOMContentLoaded" // HTML loaded (safe to access DOM)
+"load"             // everything loaded (images too)
+"resize"           // window resized
+"scroll"           // page scroll
+
+// =========================
+// TOUCH EVENTS (mobile)
+// =========================
+
+"touchstart"   // finger touches screen
+"touchmove"    // finger moves
+"touchend"     // finger lifted
+
+// =========================
+// INLINE HTML VERSIONS
+// =========================
+
+onclick=""        // click handler in HTML
+ondblclick=""     // double click
+oninput=""        // typing input
+onchange=""       // change finished
+onfocus=""        // focus gained
+onblur=""         // focus lost
+onsubmit=""       // form submit
+onreset=""        // form reset
+onkeydown=""      // key down
+onkeyup=""        // key up
+onmouseenter=""   // mouse enters
+onmouseleave=""   // mouse leaves
+ondragstart=""    // drag starts
+ondragover=""     // drag over (needs preventDefault)
+ondrop=""         // drop happens
+onload=""         // element/page loaded
+
+// =========================
+// KEY CONCEPTS
+// =========================
+
+// e (event object) → contains info about the event (target, key, mouse pos, etc.)
+// e.target         → element that triggered the event
+// e.preventDefault() → stops default browser behavior (e.g. form submit, drop blocking)
+// e.dataTransfer   → storage used during drag & drop
