@@ -1,0 +1,27 @@
+.main {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+.box {
+    margin-top: 20px;
+    padding: 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.box.active {
+    background: #00ff99;
+    color: black;
+    transform: scale(1.05);
+}
