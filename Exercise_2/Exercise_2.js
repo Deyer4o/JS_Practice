@@ -142,7 +142,7 @@ function activateSelected(){
             });
             break;
         default:
-            console.log("No activation action assigned in activateSelected()");
+            console.log("No function assigned to action (" + action + ") in activateSelected()");
             break;
     }
 
@@ -187,12 +187,12 @@ function doAction(action){
             activateSelected();
             break;
         default:
-            console.log("Action that has not been handled!");
+            console.log("Action that has not been handled in doAction()!");
             break;
     }
 }
 
-//Actually starts the asynch function:
+//Actually starts the asynch init function:
 document.addEventListener("DOMContentLoaded", async () => {
     await init();
 });
