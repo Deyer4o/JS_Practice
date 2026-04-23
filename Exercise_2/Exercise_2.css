@@ -1,27 +1,71 @@
 .main {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
+    font-family: Arial, sans-serif; /* Changing fonts */
+    display: flex;                  /* CSS Flexible Box Layout module 
+    arranges direct children into rows and collumns + auto adjusts size */
+    flex-direction: column;
+    justify-content: center;        /* aligns items along the main axis of a container
+    could also be: flex-start, flex-end, center, space-between*/
     align-items: center;
+    /*
+    Property	        flex-direction: row (Default)	flex-direction: column
+    
+    justify-content	    Moves items Left ↔ Right	    Moves items Up ↕ Down
+    align-items	        Moves items Up ↕ Down	        Moves items Left ↔ Right
+    Container Height	Usually defined by content	    Must be set (e.g., 50vh) to see vertical movement
+    */
     height: 100vh;
     background: #111;
     color: white;
+    transition: 0.3s;
 }
 
-.container {
-    text-align: center;
+.row {
+    display: flex;          /* Make each row a flex container */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
 }
 
 .box {
-    margin-top: 20px;
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 70px;
+    height: 70px;
+    width: 70px;
+
+    
+    text-align: center;
+    text-wrap: wrap;
+
+    margin: 10px;
+    padding: 20px;
     border: 2px solid white;
     border-radius: 10px;
-    transition: 0.2s;
+
+    transition: 0.3s;
 }
 
-.box.active {
+.box p {
+    margin: 5px;
+}
+
+.box.updated {
     background: #00ff99;
+    color: black;
+    transform: scale(1.05);
+}
+
+.box.selected {
+    background: #8b8b8b;
+    color: black;
+    transform: scale(1.05);
+}
+
+.box.activated {
+    background: #ffd000;
     color: black;
     transform: scale(1.05);
 }

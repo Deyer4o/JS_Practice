@@ -1,0 +1,23 @@
+{
+    "up":[
+        {"key": "w", "code":"KeyW"},
+        {"key": "ArrowUp", "code":"ArrowUp"}
+    ],
+    "left":[
+        {"key": "a", "code":"KeyA"},
+        {"key": "ArrowLeft", "code":"ArrowLeft"}
+    ],
+    "down":[
+        {"key": "s", "code":"KeyS"},
+        {"key": "ArrowDown", "code":"ArrowDown"}
+    ],
+    "right":[
+        {"key": "d", "code":"KeyD"},
+        {"key": "ArrowRight", "code":"ArrowRight"}
+    ],
+    "activate":[
+        {"key": " ", "code":"Space"},
+        {"key": "Enter", "code":"Enter"},
+        {"key": "Enter", "code":"NumpadEnter"}
+    ]
+}
