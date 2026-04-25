@@ -2,10 +2,52 @@
 // Main init: loading json:
 ///////////////////////////
 let codeMap = {};
+let pageState = {
+    lastTheme: "theme-dark",
+    lastRow: 0,
+    lastColumn: 0
+};
+let grid = buildGrid();
+let row = 0;
+let column = 0;
 
-async function init() {
+function init() {
+    loadPageState();
+    changeTheme(pageState.lastTheme);
+    updateSelection();
+    loadKeyBindings();
     
-    try{
+    // add transitions for smooth animation only after the load and updates:
+    setTimeout( () => {
+        const elementsNoAnimation = document.querySelectorAll(".box, .main");
+        elementsNoAnimation.forEach(el => {
+            el.classList.add("smooth-transitions");
+        });
+    }, 200);
+    
+}
+
+async function savePageState(style, column, row) {
+    pageState.lastTheme = style;
+    pageState.lastColumn = column;
+    pageState.lastRow = row;
+
+    localStorage.setItem('pageState', JSON.stringify(pageState));
+    console.log("Saved to LocalStorage:", pageState);
+}
+
+async function loadPageState() {
+    const savedData = localStorage.getItem("pageState");
+    if(savedData) {
+        pageState = JSON.parse(savedData);
+        row = pageState.lastRow;
+        column = pageState.lastColumn;
+        changeTheme(pageState.lastTheme);
+    }
+}
+
+async function loadKeyBindings() {
+     try{
         // Fetch the local JSON file:
         const response = await fetch('./keyBindings.json');
         
@@ -51,10 +93,6 @@ function handleInput(event) {
 ///////////////////////
 // Selection logic:
 ///////////////////////
-let grid = buildGrid();
-let row = 0;
-let column = 0;
-
 function buildGridV1() {
     const grid = [];
     const rows = [...document.getElementsByClassName("row")];
@@ -82,14 +120,13 @@ function updateSelection(){
 
         // Remove selection from all buttons
         grid.forEach(rowArray => {
-        rowArray.forEach(button => {
-            button.classList.remove("selected");
+            rowArray.forEach(button => {
+                button.classList.remove("selected");
+            });
         });
-
         // Add selection to current button
         grid[row][column].classList.add("selected");
-
-    });
+        savePageState(pageState.lastTheme,column,row);
 
     }
     else {                                //if it doesn't exist
@@ -123,23 +160,10 @@ function activateSelected(){
         case "say-bye":
             alert("Goodbye!");
             break;
-        case "light-theme":
-            document.querySelectorAll(".box").forEach(box => {
-                box.style.color = "black";
-                box.style.borderColor = "black";
-            });
-            document.querySelectorAll(".main").forEach(main => {
-                main.style.backgroundColor = "#cacaca";
-            });
-            break;
-        case "dark-theme":
-            document.querySelectorAll(".box").forEach(box => {
-                box.style.color = "white";
-                box.style.borderColor = "white";
-            });
-            document.querySelectorAll(".main").forEach(main => {
-                main.style.backgroundColor = "#111";
-            });
+        case "theme-light":
+        case "theme-dark":
+            changeTheme(action);
+            savePageState(action,column,row);
             break;
         default:
             console.log("No function assigned to action (" + action + ") in activateSelected()");
@@ -152,6 +176,32 @@ function clampColumn(){
     //clamp column if new row is shorter:
     if (column >= grid[row].length) {
     column = grid[row].length - 1;
+    }
+}
+
+function changeTheme(theme){
+    switch (theme){
+        case "theme-light":
+            document.querySelectorAll(".box").forEach(box => {
+                box.style.color = "black";
+                box.style.borderColor = "black";
+            });
+            document.querySelectorAll(".main").forEach(main => {
+                main.style.backgroundColor = "#cacaca";
+            });
+            break;
+        case "theme-dark":
+            document.querySelectorAll(".box").forEach(box => {
+                box.style.color = "white";
+                box.style.borderColor = "white";
+            });
+            document.querySelectorAll(".main").forEach(main => {
+                main.style.backgroundColor = "#111";
+            });
+            break;
+        default:
+            console.log("Invalid Theme inside changeTheme(theme)!");
+            break;
     }
 }
 

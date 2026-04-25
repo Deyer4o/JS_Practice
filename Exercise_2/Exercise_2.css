@@ -16,7 +16,6 @@
     height: 100vh;
     background: #111;
     color: white;
-    transition: 0.3s;
 }
 
 .row {
@@ -45,7 +44,6 @@
     border: 2px solid white;
     border-radius: 10px;
 
-    transition: 0.3s;
 }
 
 .box p {
@@ -68,4 +66,8 @@
     background: #ffd000;
     color: black;
     transform: scale(1.05);
+}
+
+.smooth-transitions {
+    transition: 0.3s;
 }
